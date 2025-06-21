@@ -27,7 +27,7 @@
     "  'tree %~dp0\\.. /f',",
     "  'call \"%~dp0\\internal\\quarkdown.bat\" %*'",
     ")",
-    "Write-Host 'Puppeteer was installed. Make sure Chrome, Chromium or Firefox is installed in order to generate PDF files.'"
+    "Write-Host 'Puppeteer was installed. Make sure Chrome, Chromium or Firefox is installed in order to generate PDF files.'",
     "Get-Content -Path \"$dir\\bin\\quarkdown.bat\" | ForEach-Object { Write-Host $_; }"
   ]
 }
