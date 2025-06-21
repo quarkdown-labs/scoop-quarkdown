@@ -4,7 +4,7 @@
   "homepage": "https://github.com/iamgio/quarkdown",
   "license": "GPL-3.0",
   "depends": [
-    "openjdk",
+    "java/openjdk17",
     "nodejs-lts"
   ],
   "url": "https://github.com/iamgio/quarkdown/releases/download/latest/quarkdown.zip",
