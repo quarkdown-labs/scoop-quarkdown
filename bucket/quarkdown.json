@@ -1,5 +1,5 @@
 {
-  "version": "TEST",
+  "version": "aTEST",
   "description": "A modern Markdown-based typesetting system",
   "homepage": "https://github.com/iamgio/quarkdown",
   "license": "GPL-3.0",
@@ -7,9 +7,9 @@
     "openjdk17",
     "nodejs-lts"
   ],
-  "url": "https://github.com/iamgio/quarkdown/releases/download/vTEST/quarkdown.zip",
+  "url": "https://github.com/iamgio/quarkdown/releases/download/vaTEST/quarkdown.zip",
   "hash": "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5",
-  "extract_dir": "quarkdown-1.5.1",
+  "extract_dir": "quarkdown-aTEST",
   "bin": "bin\\quarkdown.bat",
   "post_install": [
     "Set-Item -Path Env:PUPPETEER_CHROME_SKIP_DOWNLOAD -Value 'true'",
