@@ -9,7 +9,7 @@
   ],
   "url": "https://github.com/iamgio/quarkdown/releases/download/latest/quarkdown.zip",
   "hash": "64162fdf569b043d8c0ab9f044c72e07986f81bd9383a75e8d83b08930207366",
-  "extract_dir": "quarkdown-1.5.1",
+  "extract_dir": "quarkdown",
   "bin": "bin\\quarkdown.bat",
   "post_install": [
     "Set-Item -Path Env:PUPPETEER_CHROME_SKIP_DOWNLOAD -Value 'true'",
