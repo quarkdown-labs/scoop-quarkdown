@@ -21,9 +21,9 @@
 
     "Set-Content -Path \"$dir\\bin\\quarkdown.bat\" -Value @(",
     "  '@echo off',",
-    "  'set JAVA_HOME=%~dp0..\\..\\openjdk17\\current',",
-    "  'set PATH=%~dp0..\\..\\nodejs-lts\\current;%dir%\\lib\\bin;%PATH%',",
-    "  'set NPM_GLOBAL_PREFIX=%~dp0\\..\\lib',",
+    "  'set JAVA_HOME=%~dp0..\\..\\..\\openjdk17\\current',",
+    "  'set PATH=%~dp0..\\..\\..\\nodejs-lts\\current;%dir%\\lib\\bin;%PATH%',",
+    "  'set NPM_GLOBAL_PREFIX=%~dp0..\\lib',",
     "  'call \"%~dp0internal\\quarkdown.bat\" %*'",
     ")",
     "Write-Host 'Puppeteer was installed. Make sure Chrome, Chromium or Firefox is installed in order to generate PDF files.'",
