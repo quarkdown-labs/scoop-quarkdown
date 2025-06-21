@@ -26,7 +26,7 @@
     "  'set NPM_GLOBAL_PREFIX=%~dp0\\..\\lib',",
     "  'echo \"Running Quarkdown at %~dp0\"',",
     "  'tree %~dp0\\.. /f',",
-    "  '\"%~dp0\\internal\\quarkdown\" %*'",
+    "  'call \"%~dp0internal\\quarkdown.bat\" %*'",
     ")",
     "Write-Host 'Puppeteer was installed. Make sure Chrome, Chromium or Firefox is installed in order to generate PDF files.'"
   ]
