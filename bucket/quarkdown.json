@@ -12,6 +12,8 @@
   "extract_dir": "quarkdown-1.5.1",
   "bin": "bin\\quarkdown.bat",
   "post_install": [
+    "Set-Item -Path Env:PUPPETEER_CHROME_SKIP_DOWNLOAD -Value 'true'",
+    "npm install -g puppeteer --prefix \"$dir\\lib\"",
     "Set-Content -Path \"$dir\\bin\\quarkdown.bat\" -Value '@echo off\r\n' +",
     "  'set JAVA_HOME=%SCOOP%\\apps\\openjdk17\\current\r\n' +",
     "  'set PATH=%SCOOP%\\apps\\nodejs-lts\\current;%dir%\\lib\\bin;%PATH%\r\n' +",
