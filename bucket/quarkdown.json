@@ -7,8 +7,8 @@
     "openjdk17",
     "nodejs-lts"
   ],
-  "url": "https://github.com/iamgio/quarkdown/releases/download/v1.5.1/quarkdown.zip",
-  "hash": "08540367032ca605704be9bab991741c82d2c71bcb157469b3523a6a21802beb",
+  "url": "https://github.com/iamgio/quarkdown/releases/download/latest/quarkdown.zip",
+  "hash": "64162fdf569b043d8c0ab9f044c72e07986f81bd9383a75e8d83b08930207366",
   "extract_dir": "quarkdown-1.5.1",
   "bin": "bin\\quarkdown.bat",
   "post_install": [
