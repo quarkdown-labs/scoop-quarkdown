@@ -1,0 +1,22 @@
+{
+  "version": "1.5.1",
+  "description": "A modern Markdown-based typesetting system",
+  "homepage": "https://github.com/iamgio/quarkdown",
+  "license": "GPL-3.0",
+  "depends": [
+    "openjdk17",
+    "nodejs-lts"
+  ],
+  "url": "https://github.com/iamgio/quarkdown/releases/download/v1.5.1/quarkdown.zip",
+  "hash": "08540367032ca605704be9bab991741c82d2c71bcb157469b3523a6a21802beb",
+  "extract_dir": "quarkdown-1.5.1",
+  "bin": "bin\\quarkdown.bat",
+  "post_install": [
+    "Set-Content -Path \"$dir\\bin\\quarkdown.bat\" -Value '@echo off\r\n' +",
+    "  'set JAVA_HOME=%SCOOP%\\apps\\openjdk17\\current\r\n' +",
+    "  'set PATH=%SCOOP%\\apps\\nodejs-lts\\current;%dir%\\lib\\bin;%PATH%\r\n' +",
+    "  'set NPM_GLOBAL_PREFIX=%dir%\\lib\r\n' +",
+    "  '\"%dir%\\lib\\bin\\quarkdown\" %*'",
+    "Write-Host 'Puppeteer was installed. Make sure Chrome, Chromium or Firefox is installed in order to generate PDF files.'"
+  ]
+}
