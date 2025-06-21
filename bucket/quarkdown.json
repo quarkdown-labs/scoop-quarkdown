@@ -14,6 +14,11 @@
   "post_install": [
     "Set-Item -Path Env:PUPPETEER_CHROME_SKIP_DOWNLOAD -Value 'true'",
     "npm install -g puppeteer --prefix \"$dir\\lib\"",
+
+    "Remove-Item -Path \"$dir\\bin\\quarkdown\" -Force -ErrorAction SilentlyContinue",
+    "New-Item -ItemType Directory -Force -Path \"$dir\\bin\\internal\"",
+    "Move-Item -Path \"$dir\\bin\\quarkdown.bat\" -Destination \"$dir\\bin\\internal\\quarkdown.bat\"",
+
     "Set-Content -Path \"$dir\\bin\\quarkdown.bat\" -Value @(",
     "  '@echo off',",
     "  'set JAVA_HOME=%SCOOP%\\apps\\openjdk17\\current',",
@@ -21,7 +26,7 @@
     "  'set NPM_GLOBAL_PREFIX=%~dp0\\..\\lib',",
     "  'echo \"Running Quarkdown at %~dp0\"',",
     "  'tree %~dp0\\.. /f',",
-    "  '\"%~dp0\\..\\lib\\bin\\quarkdown\" %*'",
+    "  '\"%~dp0\\internal\\quarkdown\" %*'",
     ")",
     "Write-Host 'Puppeteer was installed. Make sure Chrome, Chromium or Firefox is installed in order to generate PDF files.'"
   ]
