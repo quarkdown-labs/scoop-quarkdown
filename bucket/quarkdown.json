@@ -10,15 +10,5 @@
   "url": "https://github.com/iamgio/quarkdown/releases/download/latest/quarkdown.zip",
   "hash": "64162fdf569b043d8c0ab9f044c72e07986f81bd9383a75e8d83b08930207366",
   "extract_dir": "quarkdown",
-  "bin": "bin\\quarkdown.bat",
-  "post_install": [
-    "Set-Item -Path Env:PUPPETEER_CHROME_SKIP_DOWNLOAD -Value 'true'",
-    "npm install -g puppeteer --prefix \"$dir\\lib\"",
-    "Set-Content -Path \"$dir\\bin\\quarkdown.bat\" -Value '@echo off\r\n' +",
-    "  'set JAVA_HOME=%SCOOP%\\apps\\openjdk17\\current\r\n' +",
-    "  'set PATH=%SCOOP%\\apps\\nodejs-lts\\current;%dir%\\lib\\bin;%PATH%\r\n' +",
-    "  'set NPM_GLOBAL_PREFIX=%dir%\\lib\r\n' +",
-    "  '\"%dir%\\lib\\bin\\quarkdown\" %*'",
-    "Write-Host 'Puppeteer was installed. Make sure Chrome, Chromium or Firefox is installed in order to generate PDF files.'"
-  ]
+  "bin": "bin\\quarkdown.bat"
 }
