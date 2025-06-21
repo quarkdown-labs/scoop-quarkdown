@@ -24,9 +24,8 @@
     "  'set JAVA_HOME=%SCOOP%\\apps\\openjdk17\\current',",
     "  'set PATH=%SCOOP%\\apps\\nodejs-lts\\current;%dir%\\lib\\bin;%PATH%',",
     "  'set NPM_GLOBAL_PREFIX=%~dp0\\..\\lib',",
-    "  'echo \"Running Quarkdown at %~dp0\"',",
     "  'tree %~dp0\\.. /f',",
-    "  'call \"%~dp0internal\\quarkdown.bat\" %*'",
+    "  'call \"%~dp0\\internal\\quarkdown.bat\" %*'",
     ")",
     "Write-Host 'Puppeteer was installed. Make sure Chrome, Chromium or Firefox is installed in order to generate PDF files.'"
   ]
