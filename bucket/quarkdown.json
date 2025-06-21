@@ -21,8 +21,8 @@
 
     "Set-Content -Path \"$dir\\bin\\quarkdown.bat\" -Value @(",
     "  '@echo off',",
-    "  'set JAVA_HOME=%SCOOP%\\apps\\openjdk17\\current',",
-    "  'set PATH=%SCOOP%\\apps\\nodejs-lts\\current;%dir%\\lib\\bin;%PATH%',",
+    "  'set JAVA_HOME=%~dp0\\..\\..\\openjdk17\\current',",
+    "  'set PATH=%~dp0\\..\\..\\nodejs-lts\\current;%dir%\\lib\\bin;%PATH%',",
     "  'set NPM_GLOBAL_PREFIX=%~dp0\\..\\lib',",
     "  'call \"%~dp0\\internal\\quarkdown.bat\" %*'",
     ")",
