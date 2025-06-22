@@ -13,7 +13,7 @@
   "bin": "bin\\quarkdown.bat",
   "post_install": [
     "Set-Item -Path Env:PUPPETEER_CHROME_SKIP_DOWNLOAD -Value 'true'",
-    "npm install -g puppeteer --prefix \"$dir\\lib\"",
+    "npm install -g puppeteer --prefix \"$dir\"",
 
     "Remove-Item -Path \"$dir\\bin\\quarkdown\" -Force -ErrorAction SilentlyContinue",
     "New-Item -ItemType Directory -Force -Path \"$dir\\bin\\internal\"",
@@ -21,10 +21,11 @@
 
     "Set-Content -Path \"$dir\\bin\\quarkdown.bat\" -Value @(",
     "  '@echo off',",
-    "  'set APPS_DIR=%~dp0..\\..\\..',",
+    "  'set SCOOP=%USERPROFILE%\\scoop',",
+    "  'set APPS_DIR=%SCOOP%\\apps',",
     "  'set JAVA_HOME=%APPS_DIR%\\openjdk17\\current',",
     "  'set PATH=%APPS_DIR%\\nodejs-lts\\current;%PATH%',",
-    "  'set NPM_GLOBAL_PREFIX=%~dp0..\\lib',",
+    "  'set NPM_GLOBAL_PREFIX=%APPS_DIR%\\quarkdown\\current',",
     "  'set NODE_PATH=%NPM_GLOBAL_PREFIX%\\lib\\node_modules',",
     "  '\"%~dp0_quarkdown\" %*'",
     ")",
