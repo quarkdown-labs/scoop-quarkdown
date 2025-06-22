@@ -24,7 +24,7 @@
     "  'set APPS_DIR=%~dp0..\\..\\..',",
     "  'set JAVA_HOME=%APPS_DIR%\\openjdk17\\current',",
     "  'set PATH=%APPS_DIR%\\nodejs-lts\\current;%PATH%',",
-    "  'set NPM_GLOBAL_PREFIX=%~dp0..',",
+    "  'set NPM_GLOBAL_PREFIX=%~dp0..\\..',",
     "  'set NODE_PATH=%NPM_GLOBAL_PREFIX%\\lib\\node_modules',",
     "  '\"%~dp0_quarkdown\" %*'",
     ")",
