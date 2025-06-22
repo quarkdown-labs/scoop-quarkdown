@@ -13,6 +13,7 @@
   "bin": "bin\\quarkdown.bat",
   "post_install": [
     "Set-Item -Path Env:PUPPETEER_CHROME_SKIP_DOWNLOAD -Value 'true'",
+    "npm init -y",
     "npm install puppeteer --prefix \"$dir\"",
 
     "Remove-Item -Path \"$dir\\bin\\quarkdown\" -Force -ErrorAction SilentlyContinue",
