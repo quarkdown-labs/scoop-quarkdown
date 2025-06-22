@@ -8,7 +8,7 @@
     "nodejs-lts"
   ],
   "url": "https://github.com/iamgio/quarkdown/releases/download/latest/quarkdown.zip",
-  "hash": "64162fdf569b043d8c0ab9f044c72e07986f81bd9383a75e8d83b08930207366",
+  "hash": "2a827f657d272e0ca77aee79b8aaccaad165adcaddb6ae3456205660ba26ef0a",
   "extract_dir": "quarkdown",
   "bin": "bin\\quarkdown.bat",
   "post_install": [
