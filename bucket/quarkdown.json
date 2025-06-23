@@ -1,5 +1,5 @@
 {
-  "version": "1.5.1",
+  "version": "1.6.0",
   "description": "A modern Markdown-based typesetting system",
   "homepage": "https://github.com/iamgio/quarkdown",
   "license": "GPL-3.0",
@@ -7,8 +7,8 @@
     "java/openjdk17",
     "nodejs-lts"
   ],
-  "url": "https://github.com/iamgio/quarkdown/releases/download/latest/quarkdown.zip",
-  "hash": "7373d0065b0e4408171d77f34befb8cb2346cac0d526048906086364ce3aadf3",
+  "url": "https://github.com/iamgio/quarkdown/releases/download/v1.6.0/quarkdown.zip",
+  "hash": "c73e0d9ab37f7f1416fd1e6c98c89ed5f7a93250802170c031e43b9986495a12",
   "extract_dir": "quarkdown",
   "bin": "bin\\quarkdown.bat",
   "post_install": [
