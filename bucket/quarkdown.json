@@ -12,7 +12,6 @@
   "extract_dir": "quarkdown",
   "bin": "bin\\quarkdown.bat",
   "post_install": [
-    "Set-Item -Path Env:PUPPETEER_CHROME_SKIP_DOWNLOAD -Value 'true'",
     "npm install puppeteer --prefix \"$dir\\lib\"",
     "Get-ChildItem -Path \"$dir\\lib\"",
 
@@ -26,7 +25,6 @@
     "  'set PATH=%APPS_DIR%\\nodejs-lts\\current;%PATH%',",
     "  'set QD_NPM_PREFIX=%~dp0..\\lib',",
     "  '\"%~dp0_quarkdown\" %*'",
-    ")",
-    "Write-Host 'Puppeteer was installed. Make sure Chrome, Chromium or Firefox is installed in order to generate PDF files.'"
+    ")"
   ]
 }
