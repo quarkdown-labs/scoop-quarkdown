@@ -4,7 +4,6 @@
   "homepage": "https://github.com/iamgio/quarkdown",
   "license": "GPL-3.0",
   "depends": [
-    "java/openjdk17",
     "nodejs-lts"
   ],
   "url": "https://github.com/iamgio/quarkdown/releases/download/v2.0.1/quarkdown.zip",
@@ -19,7 +18,6 @@
     "Set-Content -Path \"$dir\\bin\\quarkdown.bat\" -Value @(",
     "  '@echo off',",
     "  'set APPS_DIR=%~dp0..\\..\\..',",
-    "  'set JAVA_HOME=%APPS_DIR%\\openjdk17\\current',",
     "  'set PATH=%APPS_DIR%\\nodejs-lts\\current;%PATH%',",
     "  'set QD_NPM_PREFIX=%~dp0..\\lib',",
     "  '\"%~dp0_quarkdown\" %*'",
