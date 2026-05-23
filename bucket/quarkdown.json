@@ -1,13 +1,13 @@
 {
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "A modern Markdown-based typesetting system",
   "homepage": "https://github.com/iamgio/quarkdown",
   "license": "GPL-3.0",
   "depends": [
     "nodejs-lts"
   ],
-  "url": "https://github.com/iamgio/quarkdown/releases/download/v2.0.1/quarkdown-windows-x64.zip",
-  "hash": "8c8c974955460f714a97518d8ba96360e0037cea502b05400bb38d1e2748540d",
+  "url": "https://github.com/iamgio/quarkdown/releases/download/v2.1.0/quarkdown-windows-x64.zip",
+  "hash": "6edef8598db3859da0fcb7eabe52f7d78cb1a81a861d92074c6bb7fdff179f76",
   "extract_dir": "quarkdown",
   "bin": "bin\\quarkdown.bat",
   "post_install": [
