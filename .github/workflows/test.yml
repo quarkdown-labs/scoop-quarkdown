@@ -16,7 +16,11 @@ jobs:
     runs-on: windows-latest
 
     steps:
+      # No credentials are persisted: the workflow only reads public release assets,
+      # and manifest code from PRs must not see tokens.
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - name: Setup Scoop, install and test
         shell: powershell
