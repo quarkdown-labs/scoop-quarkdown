@@ -1,0 +1,68 @@
+name: Test manifest against devbuild
+
+# Installs the manifest with its download source swapped to Quarkdown's `latest`
+# devbuild release, then smoke-tests HTML and PDF compilation.
+# This validates manifest changes before a stable release ships them.
+# See quarkdown-labs/installation-tests for the equivalent tests against real releases.
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches: [main]
+
+# The workflow runs code controlled by pull requests: no write access is needed.
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: windows-latest
+
+    steps:
+      # No credentials are persisted: the workflow only reads public release assets,
+      # and manifest code from PRs must not see tokens.
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Setup Scoop, install and test
+        shell: powershell
+        run: |
+          Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+          Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+
+          # Point the manifest at the latest devbuild
+          $url = "https://github.com/iamgio/quarkdown/releases/download/latest/quarkdown-windows-x64.zip"
+          Invoke-WebRequest -Uri $url -OutFile devbuild.zip -UseBasicParsing
+          $hash = (Get-FileHash devbuild.zip -Algorithm SHA256).Hash.ToLowerInvariant()
+          $manifest = Get-Content bucket\quarkdown.json -Raw | ConvertFrom-Json
+          $manifest.url = $url
+          $manifest.hash = $hash
+          $manifest | ConvertTo-Json -Depth 8 | Set-Content bucket\quarkdown.json
+
+          scoop install .\bucket\quarkdown.json
+
+          $chrome = "$env:USERPROFILE\scoop\apps\quarkdown\current\lib\chrome-headless-shell-win64\chrome-headless-shell.exe"
+          if (-Not (Test-Path -Path $chrome)) {
+            Write-Error "Bundled Chrome executable not found at $chrome"
+          }
+
+          $content = ".docname {test}"
+          $content | Out-File -FilePath main.qd -Encoding utf8
+
+          quarkdown c main.qd -o ./output
+
+          Get-ChildItem -Path ./output
+
+          if (-Not (Test-Path -Path "./output/test")) {
+            Write-Error "Output directory not found"
+          }
+
+          quarkdown c main.qd -o ./output --pdf
+
+          Get-ChildItem -Path ./output
+
+          if (-Not (Test-Path -Path "./output/test.pdf")) {
+            Write-Error "Output PDF not found"
+          }
